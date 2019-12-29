@@ -16,12 +16,21 @@ public class Execute {
         IntUnaryOperator subtract = s -> s - 2;
         IntBinaryOperator sumTwo = (i1, i2) -> i1 + i2;
 
-        System.out.println("After division by 3: " + divide.applyAsInt(68884));
+        System.out.println(sumArrayValues(rawToProcess, divide, subtract, sumTwo));
+    }
 
-        System.out.println("Division and subtraction: "
-                + divide.andThen(subtract).applyAsInt(1969)
-                + divide.andThen(subtract).applyAsInt(100756));
+    public static int sumArrayValues(int[] data, IntUnaryOperator div, IntUnaryOperator sub, IntBinaryOperator sum) {
+        int[] processed = new int[data.length];
 
-        System.out.println("Sum two values: " + sumTwo.applyAsInt(645, 33583));
+        for (int i = 0; i < data.length; i++) {
+            int h = div.andThen(sub).applyAsInt(data[i]);
+            processed[i] = h;
+        }
+
+        int result = processed[0];
+        for (int i = 1; i < processed.length; i++) {
+            result = sum.applyAsInt(result, processed[i]);
+        }
+        return result;
     }
 }
