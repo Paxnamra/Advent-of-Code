@@ -1,4 +1,4 @@
-package day1.task1;
+package day1.task1.v1;
 
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntUnaryOperator;
@@ -14,7 +14,7 @@ public class Execute {
 
         IntUnaryOperator divide = iuo -> iuo / 3;
         IntUnaryOperator subtract = s -> s - 2;
-        IntBinaryOperator sumTwo = (i1, i2) -> i1 + i2;
+        IntBinaryOperator sumTwo = Integer::sum;
 
         System.out.println(sumArrayValues(rawToProcess, divide, subtract, sumTwo));
     }
