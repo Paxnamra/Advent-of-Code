@@ -1,7 +1,5 @@
 package day1.task1.v2;
 
-import java.util.function.IntUnaryOperator;
-
 public class ExecuteV2 {
     public static void main(String[] args) {
 
@@ -11,7 +9,6 @@ public class ExecuteV2 {
                 58999, 62462, 105232, 79743, 127994, 143392, 61072, 59375, 57361, 128021, 101544, 135661, 135469, 51693, 103286, 146654, 97886, 133910, 71306, 147224, 73771, 91292, 116892,
                 116906, 107424, 68283, 100285, 105709, 120370, 92931, 146706, 131745, 101710, 85089, 98788, 116232};
 
-        System.out.println("Function should receive: 3358992");
-        System.out.println(FunctionUtils.sumAll(rawToProcess));
+        System.out.println("Result after functions combined into stream: " + FunctionUtils.sumAll(rawToProcess));
     }
 }

@@ -1,8 +1,8 @@
 package day1.task1.v2;
 
+import java.util.Arrays;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntUnaryOperator;
-import java.util.stream.IntStream;
 
 public class FunctionUtils {
 
@@ -19,7 +19,6 @@ public class FunctionUtils {
     }
 
     public static int sumAll(int[] data) {
-        IntStream firstOp = IntStream.iterate(data[0], divide().andThen(subtract()));
-        return firstOp.sum();
+        return Arrays.stream(data).map(divide().andThen(subtract())).reduce(0, sumBoth());
     }
 }
