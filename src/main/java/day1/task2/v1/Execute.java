@@ -1,4 +1,4 @@
-package day1.task2;
+package day1.task2.v1;
 
 import java.util.Arrays;
 
@@ -11,12 +11,10 @@ public class Execute {
                 58999, 62462, 105232, 79743, 127994, 143392, 61072, 59375, 57361, 128021, 101544, 135661, 135469, 51693, 103286, 146654, 97886, 133910, 71306, 147224, 73771, 91292, 116892,
                 116906, 107424, 68283, 100285, 105709, 120370, 92931, 146706, 131745, 101710, 85089, 98788, 116232};
 
-        int total = Arrays.stream(rawToProcess).map(o -> ((o / 3) - 2)).sum();
+        int minusBaseGiven = Arrays.stream(rawToProcess).sum();
         int reserves = Arrays.stream(rawToProcess).map( o -> recursiveSum(o)).sum();
 
-        System.out.println("By recursion calls: ");
-        System.out.println(recursiveSum(654));
-        System.out.println(reserves);
+        System.out.println(reserves - minusBaseGiven);
     }
 
     public static int recursiveSum(int n) {
