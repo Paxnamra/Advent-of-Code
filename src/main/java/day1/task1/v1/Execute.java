@@ -3,6 +3,8 @@ package day1.task1.v1;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntUnaryOperator;
 
+import static day1.task1.IOUtils.saveToFile;
+
 public class Execute {
     public static void main(String[] args) {
 
@@ -16,7 +18,7 @@ public class Execute {
         IntUnaryOperator subtract = s -> s - 2;
         IntBinaryOperator sumTwo = Integer::sum;
 
-        System.out.println(sumArrayValues(rawToProcess, divide, subtract, sumTwo));
+        saveToFile(sumArrayValues(rawToProcess, divide, subtract, sumTwo));
     }
 
     public static int sumArrayValues(int[] data, IntUnaryOperator div, IntUnaryOperator sub, IntBinaryOperator sum) {
@@ -33,4 +35,6 @@ public class Execute {
         }
         return result;
     }
+
+
 }
