@@ -1,8 +1,8 @@
 package day1.task1;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IOUtils {
 
@@ -21,5 +21,22 @@ public class IOUtils {
         } catch (Exception e) {
             System.out.println("The result couldn't have been saved as a file!");
         }
+    }
+
+    public static int[] readFile() {
+        String fileLocation = "C:\\Advent-of-Code\\src\\main\\java\\day1\\task1\\rawToProcess";
+        List<Integer> input = new ArrayList<>();
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(new File(fileLocation)));
+            while (br.ready()) {
+                input.add(Integer.valueOf(br.readLine()));
+            }
+            br.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return input.stream().mapToInt(i -> i).toArray();
     }
 }
