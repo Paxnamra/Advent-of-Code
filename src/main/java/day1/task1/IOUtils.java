@@ -1,5 +1,6 @@
 package day1.task1;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
@@ -12,8 +13,10 @@ public class IOUtils {
             File file = new File(path);
 
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
 
-            fw.write(content);
+            bw.write(content);
+            bw.close();
             fw.close();
         } catch (Exception e) {
             System.out.println("The result couldn't have been saved as a file!");
