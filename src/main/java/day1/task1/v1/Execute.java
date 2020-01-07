@@ -1,10 +1,8 @@
 package day1.task1.v1;
 
-import java.util.function.IntBinaryOperator;
-import java.util.function.IntUnaryOperator;
+import java.util.function.*;
 
-import static day1.task1.IOUtils.readFile;
-import static day1.task1.IOUtils.saveToFile;
+import static day1.task1.IOUtils.*;
 
 public class Execute {
     public static void main(String[] args) {
