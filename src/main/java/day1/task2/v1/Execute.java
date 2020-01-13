@@ -25,3 +25,8 @@ public class Execute {
         }
     }
 }
+
+//TODO extract exceptions to separate class as enums
+//TODO file with result output as "(task-name + task-number) + lowercase + (task-version) + result.txt"
+//TODO write tests for functions - decide on testing library
+//TODO refactor this recursive method - high probability it could be done a way better
